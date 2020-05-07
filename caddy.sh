@@ -13,7 +13,7 @@ cat > /etc/Caddyfile <<'EOF'
 domain
 {
   log ./caddy.log
-  proxy /one :2333 {
+  proxy /my_docker2 :2333 {
     websocket
     header_upstream -Origin
   }
@@ -40,7 +40,7 @@ cat > /etc/v2ray/config.json <<'EOF'
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-        "path": "/one"
+        "path": "/my_docker2"
         }
       }
     }
@@ -64,7 +64,7 @@ cat > /srv/sebs.js <<'EOF'
     "host":"",
     "id":"uuid",
     "net":"ws",
-    "path":"/one",
+    "path":"/my_docker2",
     "port":"443",
     "ps":"sebsclub",
     "tls":"tls",
